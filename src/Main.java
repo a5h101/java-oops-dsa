@@ -4,8 +4,44 @@ import java.util.Scanner;
 import java.util.*;
 
 public class Main {
+    static int a;
+    Main(){
+        a=0;
+    }
+
+    static boolean isHavingEvenDigits(int num){
+        int c=0;
+        for (int i=num;i>0;i/=10)
+            c++;
+        return c%2==0;
+    }
+    static int evenDigitEl(int []arr){
+        int ed_el=0;
+        for(int i:arr){
+            if(isHavingEvenDigits(i))
+                ed_el++;
+        }
+        return ed_el;
+    }
+    static int maxInList(ArrayList<Integer> list){
+        int max = list.get(0);
+        for (int n:list) {
+            if(n>max)
+                max=n;
+        }
+        return max;
+    }
+    static int largest(ArrayList<Integer> list){
+        int n= list.get(0);
+        for (Integer li_el : list) {
+            if (li_el > n)
+                n = li_el;
+        }
+        return n;
+    }
 
     static boolean searchInStrings(String str,char ch){
+        System.out.println(a);
         for(int i=0;i<str.length();i++){
             if(ch==str.charAt(i)){
                 return true;
@@ -60,15 +96,6 @@ public class Main {
             index++;
         }
         return temp;
-    }
-
-    static int largest(ArrayList<Integer> list){
-        int n= list.get(0);
-        for (Integer li_el : list) {
-            if (li_el > n)
-                n = li_el;
-        }
-        return n;
     }
 
     static ArrayList<Integer> sortList(ArrayList<Integer> list){
@@ -160,12 +187,13 @@ public class Main {
 //       arr();
 //       arr_list();
 //        counter();
-//        int[] a = {1,2,3,4,5};
+        int[] arr= {1,2,3,4,50,51,52};
+        ArrayList<Integer> my_list=new ArrayList<Integer>(List.of(1,2,3,4,5));
 //        System.out.println(Arrays.toString(reverseArr(a)));
-//        ArrayList<Integer> my_list=new ArrayList<Integer>(List.of(1,2,3,4,5));
-//        int[] arr= {1,2,3,4,5};
+//        System.out.println(maxInList(my_list));
 //        System.out.println(search(arr,6));
-        System.out.println(searchInStrings("Akash Singh",'A'));
+//        System.out.println(searchInStrings("Akash Singh",'A'));
+        System.out.println(evenDigitEl(arr));
 
     }
 }
