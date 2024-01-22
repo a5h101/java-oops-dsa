@@ -9,12 +9,47 @@ public class Main {
         a=0;
     }
 
+    //Ceiling of a given number in an array #2
+    static int binarySortCeil(int[] arr, int target){
+        int st=0;
+        int end=arr.length-1;
+        while (st<=end){
+            int mid=st+(end-st)/2;
+            if(arr[mid]==target)
+                return arr[mid];
+            else if(arr[mid]>target)
+                end=mid-1;
+             else
+                st=mid+1;
+        }
+        return arr[st];
+    }
+
+    //Ceiling of a given number in an array #1
+    static int getCeiling(int[] arr, int tar){
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i:arr){
+            if(i==tar){
+                return i;
+            }
+            if(i>tar){
+                list.add(i);
+            }
+        }
+
+        list=sortList(list);
+        return list.get(0);
+    }
+
+    //Count number of digits
     static boolean isHavingEvenDigits(int num){
         int c=0;
         for (int i=num;i>0;i/=10)
             c++;
         return c%2==0;
     }
+
+    //Count even digit els in array
     static int evenDigitEl(int []arr){
         int ed_el=0;
         for(int i:arr){
@@ -23,6 +58,8 @@ public class Main {
         }
         return ed_el;
     }
+
+    //Largest el in list
     static int maxInList(ArrayList<Integer> list){
         int max = list.get(0);
         for (int n:list) {
@@ -31,6 +68,8 @@ public class Main {
         }
         return max;
     }
+
+    //Largest el in list #2
     static int largest(ArrayList<Integer> list){
         int n= list.get(0);
         for (Integer li_el : list) {
@@ -40,6 +79,7 @@ public class Main {
         return n;
     }
 
+    //Search char in string
     static boolean searchInStrings(String str,char ch){
         System.out.println(a);
         for(int i=0;i<str.length();i++){
@@ -50,6 +90,7 @@ public class Main {
         return false;
     }
 
+    //Search and return index of el in array
     static  int search(int[] arr,int n){
         int idx=-1;
 
@@ -62,6 +103,7 @@ public class Main {
         return  idx;
     }
 
+    //Search and return index of el in lsit
     static int search(ArrayList<Integer> original_list, int n) {
         ArrayList<Integer> list = new ArrayList<>(original_list);
         System.out.println(list);
@@ -86,7 +128,7 @@ public class Main {
 
         return idx;
     }
-
+    //Reverse Array
     static int[] reverseArr(int[] arr){
         int n = arr.length;
         int index=0;
@@ -98,6 +140,7 @@ public class Main {
         return temp;
     }
 
+    //Sort list in Acending
     static ArrayList<Integer> sortList(ArrayList<Integer> list){
         for (Integer li_el:list){
             for(int i=0;i<list.size()-1;i++){
@@ -112,6 +155,7 @@ public class Main {
         return list;
     }
 
+    //Reverse List
     static ArrayList<Integer> reverseList(ArrayList<Integer> list){
 //        ArrayList<Integer> temp_list = new ArrayList<>(list);
 //        Collections.reverse(list);
@@ -129,11 +173,13 @@ public class Main {
         return list;
     }
 
+    //count till a billion
     static void counter(){
         for(int i=1;i<=1000000000;i++)
             System.out.println(i);
     }
 
+    //Create a list
     static void arr_list(){
         Scanner sc = new Scanner(System.in);
 
@@ -162,6 +208,7 @@ public class Main {
 
     }
 
+    //Create 2d array
     static void arr(){
         Scanner sc = new Scanner(System.in);
         int[][] matrix = new int[3][3];
@@ -187,13 +234,14 @@ public class Main {
 //       arr();
 //       arr_list();
 //        counter();
-        int[] arr= {1,2,3,4,50,51,52};
+        int[] arr= {1,3,5,7,50,51,52};
         ArrayList<Integer> my_list=new ArrayList<Integer>(List.of(1,2,3,4,5));
 //        System.out.println(Arrays.toString(reverseArr(a)));
 //        System.out.println(maxInList(my_list));
 //        System.out.println(search(arr,6));
 //        System.out.println(searchInStrings("Akash Singh",'A'));
-        System.out.println(evenDigitEl(arr));
+//        System.out.println(evenDigitEl(arr));
+//        System.out.println(binarySortCeil(arr,2));
 
     }
 }
