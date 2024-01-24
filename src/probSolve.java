@@ -10,11 +10,7 @@ public class probSolve {
         return c;
     }
     static boolean checkEven(int n){
-        if(n%2==0)
-            return true;
-        else {
-            return false;
-        }
+        return n % 2 == 0;
     }
 
     static int[] makeArr(int n,int len){
@@ -61,12 +57,7 @@ public class probSolve {
 
         int k=0;
         for(int i=0;i<arr.length-1;i+=2){
-            if(arr[i]>arr[i+1]) {
-                arr2[k]=arr[i];
-            }
-            else {
-                arr2[k]=arr[i+1];
-            }
+            arr2[k] = Math.max(arr[i], arr[i + 1]);
             k++;
         }
 

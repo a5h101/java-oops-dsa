@@ -105,7 +105,7 @@ public class Main {
         return  idx;
     }
 
-    //Search and return index of el in lsit
+    //Search and return index of el in list
     static int search(ArrayList<Integer> original_list, int n) {
         ArrayList<Integer> list = new ArrayList<>(original_list);
         System.out.println(list);
@@ -142,7 +142,7 @@ public class Main {
         return temp;
     }
 
-    //Sort list in Acending
+    //Sort list in Ascending
     static ArrayList<Integer> sortList(ArrayList<Integer> list){
         for (Integer li_el:list){
             for(int i=0;i<list.size()-1;i++){
