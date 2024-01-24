@@ -22,7 +22,9 @@ public class Main {
              else
                 st=mid+1;
         }
+        if(st<arr.length)
         return arr[st];
+        else return -1;
     }
 
     //Ceiling of a given number in an array #1
@@ -231,17 +233,22 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
 //       arr();
 //       arr_list();
 //        counter();
-        int[] arr= {1,3,5,7,50,51,52};
+//        int[] arr= {1,3,5,7,50,51,52};
+        int[] arr= {'a','b','d','e'};
+        Scanner sc = new Scanner(System.in);
+//        char ch = sc.ne();
+
         ArrayList<Integer> my_list=new ArrayList<Integer>(List.of(1,2,3,4,5));
 //        System.out.println(Arrays.toString(reverseArr(a)));
 //        System.out.println(maxInList(my_list));
 //        System.out.println(search(arr,6));
 //        System.out.println(searchInStrings("Akash Singh",'A'));
 //        System.out.println(evenDigitEl(arr));
-//        System.out.println(binarySortCeil(arr,2));
+        System.out.println((char)(binarySortCeil(arr,'a')));
 
     }
 }
