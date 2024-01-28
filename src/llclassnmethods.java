@@ -79,6 +79,50 @@ public class llclassnmethods {
                 size++;
             }
         }
+        void getAt(int idx){
+            if(idx<0 || idx>=size){
+                System.out.println("Invalid Index");
+            }
+            else if(idx==0){
+                System.out.println(head.data);
+            }
+            else if(idx==size-1){
+                System.out.println(tail.data);
+            }
+            else {
+                Node curr=head;
+                for(int i=0;i<idx;i++){
+                    curr=curr.next;
+                }
+                System.out.println(curr.data);
+            }
+        }
+        void deleteAt(int idx){
+            if(idx<0 || idx>=size){
+                System.out.println("Invalid Index");
+            }
+            else if(idx==0){
+                head=head.next;
+                size--;
+            }
+            else if(idx==size-1){
+                Node curr=head;
+                for(int i=0;i<idx-1;i++){
+                    curr=curr.next;
+                }
+                curr.next=null;
+                tail=curr;
+                size--;
+            }
+            else {
+                Node curr=head;
+                for(int i=0;i<idx-1;i++){
+                    curr=curr.next;
+                }
+                curr.next=curr.next.next;
+                size--;
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -90,6 +134,9 @@ public class llclassnmethods {
         }
         ll.insertAt(3,3);
         ll.display();
+        ll.getAt(3);
+        ll.deleteAt(3);
+        System.out.println(ll.tail.data + " " + ll.head.data);
     }
 }
 

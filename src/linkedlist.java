@@ -37,8 +37,7 @@ public class linkedlist {
         while (temp.next!=null){
             temp=temp.next;
         }
-        Node newNode=new Node(data);
-        temp.next=newNode;
+        temp.next= new Node(data);
     }
     public static void main(String[] args) {
         Node a=new Node(98);
