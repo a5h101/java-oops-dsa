@@ -32,6 +32,14 @@ public class linkedlist {
             temp=temp.next;
         }
     }
+    public static void insertAtEnd(Node head,int data){
+        Node temp=head;
+        while (temp.next!=null){
+            temp=temp.next;
+        }
+        Node newNode=new Node(data);
+        temp.next=newNode;
+    }
     public static void main(String[] args) {
         Node a=new Node(98);
         Node b=new Node(78);
@@ -53,3 +61,4 @@ public class linkedlist {
         lengthRecursion(a);
     }
 }
+
