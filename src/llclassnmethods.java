@@ -97,6 +97,22 @@ public class llclassnmethods {
                 System.out.println(curr.data);
             }
         }
+        void nthFormEnd(int n){
+//            int s=0;
+            int s = size;
+            int c=0;
+            Node temp=head;
+//            while (temp!=null){
+//                s++;
+//                temp=temp.next;
+//            }
+//            temp=head;
+            while (c!=(s-n-1)){
+                temp=temp.next;
+                c++;
+            }
+            System.out.println(temp.next.data);
+        }
         void deleteAt(int idx){
             if(idx<0 || idx>=size){
                 System.out.println("Invalid Index");
@@ -137,6 +153,7 @@ public class llclassnmethods {
         ll.getAt(3);
         ll.deleteAt(3);
         System.out.println(ll.tail.data + " " + ll.head.data);
+        ll.nthFormEnd(2);
     }
 }
 
