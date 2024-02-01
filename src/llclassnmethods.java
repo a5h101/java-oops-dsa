@@ -98,15 +98,15 @@ public class llclassnmethods {
             }
         }
         void nthFormEnd(int n){
-//            int s=0;
-            int s = size;
+            int s=0;
+//            int s = size;
             int c=0;
             Node temp=head;
-//            while (temp!=null){
-//                s++;
-//                temp=temp.next;
-//            }
-//            temp=head;
+            while (temp!=null){
+                s++;
+                temp=temp.next;
+            }
+            temp=head;
             while (c!=(s-n-1)){
                 temp=temp.next;
                 c++;
