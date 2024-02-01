@@ -3,12 +3,33 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class probSolve {
+    static void pattern(int n) {
+        int sp = n / 2;
+        int st = 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= sp; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= st; j++) {
+                System.out.print("*");
+            }
+            if (i <= n / 2) {
+                sp--;
+                st += 2;
+            } else {
+                sp++;
+                st -= 2;
+            }
+            System.out.println();
+        }
+    }
     static int len(int n){
         int c=0;
         for(int i=n;i>0;i/=10)
             c++;
         return c;
     }
+
     static boolean checkEven(int n){
         return n % 2 == 0;
     }
@@ -22,7 +43,6 @@ public class probSolve {
         }
         return arr;
     }
-
     static int reverse(int n){
         int n1=0;
         int c=1;
@@ -77,27 +97,7 @@ public class probSolve {
       *
 
      ---------------------*/
-    static void pattern(int n){
-        int sp=n/2;
-        int st=1;
-        for(int i=1;i<=n;i++){
-            for(int j=1;j<=sp;j++){
-                System.out.print(" ");
-            }
-            for(int j=1;j<=st;j++){
-                System.out.print("*");
-            }
-            if(i<=n/2){
-                sp--;
-                st+=2;
-            }
-            else{
-                sp++;
-                st-=2;
-            }
-            System.out.println();
-        }
-    }
+
 
 
     public static void main(String[] args) {

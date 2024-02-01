@@ -4,6 +4,7 @@ public class linkedlist {
         Node next;
         Node(int data){
             this.data=data;
+            this.next=null;
         }
     }
     public static void lengthRecursion(Node head){
