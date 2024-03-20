@@ -1,8 +1,7 @@
 public class recursion {
     static int fib(int n){
-        if(n==0 || n==1)
-            return n;
-        return  fib(n-1)+fib(n-2);
+        if (n==0||n==1) return n;
+        return fib(n-1)+fib(n-2);
     }
     static int fibonaccci (int n){
         int a=0;
@@ -14,6 +13,12 @@ public class recursion {
             b=c;
         }
         return c;
+    }
+
+    static int oneToN(int n){
+        if(n>10) return n;
+        System.out.println(n);
+        return oneToN(n+1);
     }
 //    static int factorial(int n){
 //        if()
@@ -32,9 +37,7 @@ public class recursion {
     }
 
     static int factR(int n){
-        if(n<2){
-            return 1;
-        }
+        if(n<=1) return 1;
         return n*factR(n-1);
     }
 
@@ -42,6 +45,11 @@ public class recursion {
         if(i==0)
             return arr[0];
         return arr[i]+sumArr(i-1,arr);
+    }
+
+    static int sumOfDigs(int n){
+        if(n/10<1) return n;
+      return  sumOfDigs(n/10) + n%10;
     }
 
 //    static int countOccurence(int i,int[] arr,int count,int el){
@@ -54,6 +62,10 @@ public class recursion {
 //            count++;
 //        return countOccurence(i-1,arr,count,el);
 //    }
+    static int PpowQ(int p,int q){
+        if(q==0) return 1;
+        return PpowQ(p,q-1)*p;
+    }
 
     static int countOccurence(int i, int[] arr, int el) {
         if (i < 0)
@@ -79,11 +91,14 @@ public class recursion {
 
 
     public static void main(String[] args) {
-        System.out.println(fibonaccci(45));
-        System.out.println(fib(45));
+        System.out.println(PpowQ(2,4));
+//        System.out.println(fibonaccci(45));
+//        System.out.println(fib(2));
+//        System.out.println(sumOfDigs(10));
+//        System.out.println(oneToN(1));
 
 //        System.out.println(fact(3));
-//        System.out.println(factR(3));
+//        System.out.println(factR(5));
 //
 //        int[] a={5,3,2,5,10,5};
 //        System.out.println(sumArr(a.length-1,a));

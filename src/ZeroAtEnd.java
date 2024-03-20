@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-<<<<<<< HEAD
+
 //public class ZeroAtEnd {
 //    public static class Node {
 //        int data;
@@ -80,7 +80,6 @@ import java.util.Scanner;
 //        ll.display();
 //    }
 //}
-=======
 public class ZeroAtEnd {
     public static class Node {
         int data;
@@ -160,7 +159,7 @@ public class ZeroAtEnd {
         ll.display();
     }
 }
->>>>>>> origin/master
+
 
 
 
