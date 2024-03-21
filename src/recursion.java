@@ -51,7 +51,6 @@ public class recursion {
         if(n/10<1) return n;
       return  sumOfDigs(n/10) + n%10;
     }
-
 //    static int countOccurence(int i,int[] arr,int count,int el){
 //        if(i==0) {
 //            if (arr[i] == el)
@@ -66,7 +65,6 @@ public class recursion {
         if(q==0) return 1;
         return PpowQ(p,q-1)*p;
     }
-
     static int countOccurence(int i, int[] arr, int el) {
         if (i < 0)
             return 0;
@@ -89,10 +87,40 @@ public class recursion {
         return sum;
     }
 
+    static void  printMultiples(int n,int k){
+        if(k<1) return;
+        printMultiples(n,k-1);
+        System.out.print(n*k+ ", ");
+    }
+    static int alternateSum(int n){
+        if(n==1) return 1;
+        if(n%2==0)
+            return alternateSum(n-1)-n;
+        else
+            return alternateSum(n-1)+n;
+    }
+
+    static int gcd(int a,int b){
+        while(b%a!=0){
+            int rem = b%a;
+            b = a;
+            a = rem;
+        }
+        return a;
+    }
+
+//    static int gcdR(int a,int b){
+//        if(b%a==0) return a;
+//      return gcdR(b%a,a);
+//    }
 
     public static void main(String[] args) {
-        System.out.println(PpowQ(2,4));
+//        System.out.println(PpowQ(2,4));
+//        System.out.println(printMultiples(12,3));
+//        printMultiples(12,3);
+//        System.out.println(alternateSum(5));
 //        System.out.println(fibonaccci(45));
+//        System.out.println(gcdR(15,24));
 //        System.out.println(fib(2));
 //        System.out.println(sumOfDigs(10));
 //        System.out.println(oneToN(1));
