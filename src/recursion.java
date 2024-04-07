@@ -168,9 +168,36 @@ public class recursion {
         }
         return ans;
     }
+    static void printSSQ(String str,String ans){
+        if(str.length()==0){
+            System.out.print(ans+",");
+            return;
+        }
+        printSSQ(str.substring(1),ans+str.charAt(0));
+        printSSQ(str.substring(1),ans);
+    }
+    static void printSumSubset(int[] arr,int idx,int currSum){
+        if(arr.length==idx) {
+            System.out.print(currSum + ", ");
+            return;
+        }
+        printSumSubset(arr,idx+1,currSum+arr[idx]);
+        printSumSubset(arr,idx+1,currSum);
+    }
+    static int frogJump(int[] arr,int idx){
+        if(idx==arr.length-1) return 0;
+        int opt1 = Math.abs(arr[idx]-arr[idx+1])+frogJump(arr,idx+1);
+        if(idx==arr.length-2) return opt1;
+        int opt2 = Math.abs(arr[idx]-arr[idx+1])+frogJump(arr,idx+2);
+        return Math.min(opt1,opt2);
+    }
     public static void main(String[] args) {
+        int[] a={10,30,40,20};
+        System.out.println(frogJump(a,0));
 //        System.out.println(reverseString("abcde",0));
 //        System.out.println(getSSQ("abc"));
+//        printSumSubset(a,0,0);
+//        printSSQ("abc","");
 //        System.out.println(isPalindrome("li",0));
 //        int[] arr = {1,2,4,9,5};
 //        ArrayList<Integer> list = new ArrayList<>();
