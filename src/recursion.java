@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*;
 
 public class recursion {
     static int fib(int n){
@@ -191,9 +190,52 @@ public class recursion {
         int opt2 = Math.abs(arr[idx]-arr[idx+1])+frogJump(arr,idx+2);
         return Math.min(opt1,opt2);
     }
+    static List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<>();
+        if (digits == null || digits.length() == 0) {
+            return result;
+        }
+
+        String[] phoneMap = {
+                "0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"
+        };
+
+        generateCombinations(digits, 0, "", result, phoneMap);
+
+        return result;
+    }
+    static void generateCombinations(String digits, int index, String current, List<String> result, String[] phoneMap) {
+        if (index == digits.length()) {
+            result.add(current);
+            return;
+        }
+
+        char digit = digits.charAt(index); // 23 me 2
+        String letters = phoneMap[digit - '0']; //2 ko press krke kya kya ho skta hai - a,b,c
+
+        for (char letter : letters.toCharArray()) { //a----b----c
+            generateCombinations(digits, index + 1, current + letter, result, phoneMap);
+        }
+    }
+
+    static void keypadCombo(String[] phoneMap, String digits, int idx, String curr){
+        if(idx == digits.length()){
+            System.out.print(curr+", ");
+            return;
+        }
+        char dig = digits.charAt(idx);
+        String letters = phoneMap[dig-'0'];
+
+        for(char letter: letters.toCharArray()){
+            keypadCombo(phoneMap, digits,idx+1,curr+letter);
+        }
+    }
     public static void main(String[] args) {
-        int[] a={10,30,40,20};
-        System.out.println(frogJump(a,0));
+//        int[] a={10,30,40,20};
+        String[] phoneMap = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        keypadCombo(phoneMap,"23",0,"");
+//        System.out.println(letterCombinations("23"));
+//        System.out.println(frogJump(a,0));
 //        System.out.println(reverseString("abcde",0));
 //        System.out.println(getSSQ("abc"));
 //        printSumSubset(a,0,0);
