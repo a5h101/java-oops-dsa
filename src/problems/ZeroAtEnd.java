@@ -1,7 +1,9 @@
+package problems;
+
 import java.util.Scanner;
 
 
-//public class ZeroAtEnd {
+//public class problems.ZeroAtEnd {
 //    public static class Node {
 //        int data;
 //        Node next;
@@ -11,7 +13,7 @@ import java.util.Scanner;
 //        }
 //    }
 //
-//    public static class linkedlist{
+//    public static class linkedlist.linkedlist{
 //        Node head=null;
 //        Node tail=null;
 //        int c=0;
@@ -66,7 +68,7 @@ import java.util.Scanner;
 //
 //    public static void main(String[] args) {
 //        int[] arr={1,2,0,6,5,4,5,0};
-//        linkedlist ll = new linkedlist();
+//        linkedlist.linkedlist ll = new linkedlist.linkedlist();
 //        for(int i:arr){
 //            ll.insertAtEnd(i);
 //        }

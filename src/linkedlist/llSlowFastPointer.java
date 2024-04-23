@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class llSlowFastPointer {
     public static class Node{
         int data;

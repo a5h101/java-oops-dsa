@@ -1,3 +1,5 @@
+package linkedlist;
+
 public class llclassnmethods {
     public static class Node {
         int data;
